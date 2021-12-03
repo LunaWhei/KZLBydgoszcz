@@ -1,0 +1,48 @@
+﻿@model IEnumerable<KZLBydgoszcz.Models.Lessons>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.LessonName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Student_class.Class_identificator)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Teachers.LastName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.LessonName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Student_class.Class_identificator)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Teachers.LastName)
+                @Html.DisplayFor(modelItem => item.Teachers.FirstName)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.LessonID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.LessonID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.LessonID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
