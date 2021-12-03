@@ -10,11 +10,14 @@ namespace KZLBydgoszcz.Models
     {
         [Key]
         public int LessonID { get; set; }
+        [Required(ErrorMessage = "Pole wymagane")]
         [Display(Name = "Przedmiot")]
         public string LessonName { get; set; }
+        [Required(ErrorMessage = "Pole wymagane")]
         [Display(Name = "Klasa")]
         public int Student_classID { get; set; }
         public virtual Class_Name Student_class { get; set; }
+        [Required(ErrorMessage = "Pole wymagane")]
         [Display(Name = "Nauczyciel")]
         public int TeachersId { get; set; }
         public virtual Teacher Teachers { get; set; }

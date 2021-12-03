@@ -1,12 +1,12 @@
 ﻿@model KZLBydgoszcz.Models.Lessons
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Edycja";
 }
 
-<h1>Edit</h1>
+<h1>Edytuj</h1>
 
-<h4>Lessons</h4>
+<h4>Zajęcia</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -29,14 +29,14 @@
                 <span asp-validation-for="TeachersId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Zapisz" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Powrót</a>
 </div>
 
 @section Scripts {

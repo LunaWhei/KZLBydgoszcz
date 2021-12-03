@@ -20,8 +20,26 @@ namespace KZLBydgoszcz.Controllers
 
         // GET: Students
         public async Task<IActionResult> Index()
-        {
+        { 
             var studentContext = _context.Students.Include(s => s.Student_class);
+
+            
+        return View(await studentContext.ToListAsync());
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Index(string searchResult)
+        {
+            ViewData["ListFromSearch"] = searchResult;
+            var studentContext = from m in _context.Students select m;
+
+
+
+            if (!string.IsNullOrEmpty(searchResult))
+            {
+                studentContext = studentContext.Where(s => s.FirstName.Contains(searchResult) || s.LastName.Contains(searchResult));
+            }
+
             return View(await studentContext.ToListAsync());
         }
 

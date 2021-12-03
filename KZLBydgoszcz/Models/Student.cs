@@ -20,8 +20,10 @@ namespace KZLBydgoszcz.Models
         [DataType(DataType.Date)]
         [Display(Name = "Data Urodzenia")]
         public DateTime BirthDate { get; set; }
+        [Required(ErrorMessage = "Pole wymagane")]
         [Display(Name = "Średnia ocen z poprzedniego roku (float)")]
         public float AvgGrade { get; set; }
+        [Required(ErrorMessage = "Pole wymagane")]
         [Display(Name = "Identyfikator Klasy")]
         public int Student_classID { get; set; }
         public string Class_identificator { get; }
